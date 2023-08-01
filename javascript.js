@@ -11,7 +11,6 @@ let playGame = (playerSelection, ComputerSelection) => {
     let firstLetter = capPlayerSelection.charAt(0).toUpperCase();
     capPlayerSelection = capPlayerSelection.slice(1);
     capPlayerSelection = firstLetter.concat(capPlayerSelection);
-    console.log(capPlayerSelection, ComputerSelection);
     // first if both the computer and human chooses similar answer
     if (capPlayerSelection === ComputerSelection) {
         return answer = `It's A Tie. Both You And Computer Choose ${playerSelection || ComputerSelection}`;
@@ -67,4 +66,37 @@ let playGame = (playerSelection, ComputerSelection) => {
     }
 }
 
-console.log(playGame(getComputerChoice(),getComputerChoice()));
+let game = () => {
+    let userScore = 0;
+    let compScore = 0;
+    // 1 will mean we won the game 
+    // -1 will mean comp won the game
+    // o will mean it's a tier
+    // Run a loop 5 times and change the scores
+
+    for (let i = 0; i < 5; i++) {
+        let userChoice = prompt("Choose Your weapon");
+        let compChoice = getComputerChoice();
+        let answer = playGame(userChoice,compChoice);
+        if (answer === "You Won.Rock Beats Scissors" | answer === "You Won.Paper Beats Rock" | answer === "You Won.Scissors Beats Paper") {
+            userScore += 1;
+
+        }
+        else if (answer === "You Lost.Paper Beats Rock" | answer === "You Lost.Scissors Beats Paper" | answer === "You Lost.Rock Beats Scissors") {
+            compScore += 1;
+
+        }
+        console.log(answer);
+    }
+    // we get the winner  
+    console.log(`Your Score: ${userScore}`);
+    console.log(`Comp Score: ${compScore}`);
+    if (userScore > compScore) {
+        console.log('Congrats You Won Against Computer')
+    } else {
+        console.log('!!Sad Emoji!! Computer Won The Game')
+    }
+
+};
+game();
+

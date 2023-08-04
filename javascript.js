@@ -98,5 +98,65 @@ let game = () => {
     }
 
 };
-game();
+let usersScore = 0;
+let computerScore = 0;
+
+let playAnGame = (e) => {
+    let userChoosed = e.target.dataset.choice;
+    let compChoosed = getComputerChoice();
+    let answer = playGame(userChoosed,compChoosed);
+
+    let userScoreBoard = document.querySelector('.scorehuman');
+    let compScoreBoard = document.querySelector('.scorecomp');
+
+    const gif = document.querySelector('#gif');
+    const body = document.querySelector('body');
+    const hOne = document.querySelector('h1');
+    
+    if (answer === "You Won.Rock Beats Scissors" | answer === "You Won.Paper Beats Rock" | answer === "You Won.Scissors Beats Paper") {
+        usersScore += 1;
+        hOne.style.color = 'green';
+        gif.innerHTML = `<img  style="border-radius:0%;" src="https://media.tenor.com/jnh4LaTmuFMAAAAC/spider-man-dance-memes.gif">`;
+
+    }
+    else if (answer === "You Lost.Paper Beats Rock" | answer === "You Lost.Scissors Beats Paper" | answer === "You Lost.Rock Beats Scissors") {
+        computerScore += 1;
+        hOne.style.color = 'red';
+        gif.innerHTML = `<img  style="border-radius:0%;"src="https://media.tenor.com/GIbER2Fy3UUAAAAC/spiderman-sad-spiderman.gif">`;
+
+
+    }
+    console.log(answer, usersScore,computerScore);
+    userScoreBoard.innerHTML = `Human Score: ${usersScore}`;
+    compScoreBoard.innerHTML = `Comp Score: ${computerScore}`;
+    let h1 = document.querySelector('h1');
+    h1.innerHTML = `${answer}`;
+    if (usersScore > 4) {
+        document.write(`<h1 style="text-align:center; margin-top: 100px;">you have won the game by ${usersScore - computerScore} points</h1>`);
+    }
+    if (computerScore > 4) {
+        document.write(`<h1 style="text-align:center; margin-top: 100px;>You have lost to computer by ${computerScore - usersScore} points</h1>`);
+    }
+    h1.innerHTML = `${answer}`;
+
+};
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', playAnGame));
+
+// feaeture to add
+
+// 
+// For now, remove the logic that plays exactly five rounds.
+
+// Create three buttons, one for each selection. Add an event listener to the buttons that call your 
+// playRound function with the correct playerSelection every time a button is clicked. 
+// (you can keep the console.logs for this step)
+
+// Add a div for displaying results and change all of your console.logs into DOM methods.
+// Display the running score, and announce a winner of the game once one player reaches 5 points.
+// You will likely have to refactor (rework/rewrite) your original code to make it work for this. 
+// That’s OK! Reworking old code is an important part of a programmer’s life.
+
+// 
 

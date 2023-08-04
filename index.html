@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="./javascript.js"></script>
+    <script src="./javascript.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="./style.css" rel="stylesheet"></link>
 </head>
 <body>
-    
+    <div id="scores">
+        <div class="scorehuman">Human Score: 0</div>
+        <div class="scorecomp">Comp Score: 0</div>
+    </div>
+    <!--  -->
+    <div id="message">
+        <h1>Choose Your Weapon</h1>
+        <div id="gif"><img style="border-radius: 0%;" src="https://media.tenor.com/xNsYVEbD7XIAAAAC/good-luck-keep-going.gif"></div>
+    </div>
+
+    <div id="buttons">
+        <div class="image">
+            <img src="https://media.tenor.com/kHcmsxlKHEAAAAAC/rock-one-eyebrow-raised-rock-staring.gif">
+            <button data-choice="Rock" type="button" class="btn btn-outline-danger">Rock</button>
+        </div>
+
+        <div class="image">
+            <img src="https://media.tenor.com/U_xJRkSD54AAAAAj/abiera-origami.gif">
+
+            <button type="button" data-choice="Paper" class="btn btn-outline-primary">Paper</button>
+        </div>
+
+        <div class="image">
+            <img src="https://media.tenor.com/JaKWij56-xIAAAAC/scissors-big.gif">
+
+            <button type="button" data-choice="Scissors" class="btn btn-outline-warning">Scissors</button>
+
+        </div>
+
+    </div>
 </body>
 </html>

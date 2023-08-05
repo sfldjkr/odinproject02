@@ -1,8 +1,20 @@
 body {
     text-align: center;
     font-family: sans-serif;
-    background-image: url('https://previews.123rf.com/images/szakalikus/szakalikus1612/szakalikus161202047/68700034-red-and-white-paint-mixing-into-pink-color-background.jpg');
+    background-color:#a0d2eb;
 }
+
+/* 
+Ice Cold: #a0d2eb
+
+Freeze Purple: #e5eaf5
+
+Medium Purple: #d0bdf4
+
+Purple Pain: #8458B3
+
+Heavy Purple: #a28089
+ */
 
 img {
     border-radius: 50%;
@@ -29,9 +41,19 @@ img {
     width:95%;
     justify-content: space-around;
 
+}
 
+#scores > div {
+    background-color:#d0bdf4;
+    padding: 20px;
+    color:white;
 }
 
 #message {
     margin: 100px auto;
+    background-color: #d0bdf4;
+    padding: 50px;
+    color:white;
+    
 }
+
